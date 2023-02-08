@@ -1,0 +1,55 @@
+Ticket 1: Add a custom id field to the Agents table
+Acceptance Criteria:
+A new column named "custom_id" has been added to the Agents table in the database.
+The custom_id field should allow up to 100 characters and should be nullable.
+Time/Effort Estimate: 1 hour
+
+Implementation Details:
+Connect to the database.
+Use ALTER TABLE statement to add a new column to the Agents table.
+
+
+Ticket 2: Implement UI for editing custom id for each Agent
+Acceptance Criteria:
+A new UI form has been added to the platform that allows Facilities to edit the custom id of each Agent they work with.
+The form should display the current custom id of each Agent, if set, and should allow Facilities to edit or set the custom id for each Agent.
+Time/Effort Estimate: 2 hours
+
+Implementation Details:
+Create a new component in the platform's front-end.
+The component should retrieve a list of all Agents from the database.
+The component should display the list of Agents and their current custom id.
+The component should allow Facilities to edit or set the custom id for each Agent.
+
+
+Ticket 3: Modify getShiftsByFacility to include custom id in returned shifts data
+Acceptance Criteria:
+The getShiftsByFacility function has been modified to include the custom id of each Agent in the list of shifts returned.
+The custom id should be included as a new field in the metadata of each shift.
+Time/Effort Estimate: 1 hour
+
+Implementation Details:
+Modify the getShiftsByFacility function to include the custom id of each Agent in the list of shifts returned.
+The custom id should be retrieved from the Agents table in the database.
+
+
+Ticket 4: Modify generateReport to use custom id instead of database id
+Acceptance Criteria:
+The generateReport function has been modified to use the custom id of each Agent instead of their database id when generating reports.
+The reports should correctly display the custom id of each Agent instead of their database id.
+Time/Effort Estimate: 1 hour
+
+Implementation Details:
+Modify the generateReport function to use the custom id of each Agent instead of their database id when generating reports.
+The custom id should be retrieved from the metadata of each shift.
+
+
+Ticket 5: Test and Deploy
+Acceptance Criteria:
+The platform has been tested and any bugs or issues have been fixed.
+The platform has been deployed to production with the new custom id feature.
+Time/Effort Estimate: 1 hour
+Implementation Details:
+Test the functionalities of the 2 modified functions to check for data returned i.e Custom Agent Id. Test the platform thoroughly through Unit and Integration test cases. 
+Fix any bugs or issues that are discovered.
+Deploy the platform to production.
