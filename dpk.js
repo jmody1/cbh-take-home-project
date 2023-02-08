@@ -1,3 +1,7 @@
+/* 
+In this refactored version, the trivial partition key is assigned at the beginning and only overwritten if the event or the event's partition key are present. The hash calculation for the event data has been moved inside the else if statement, so it will only be executed if the event is present but doesn't contain a partition key. Additionally, the code has been rearranged to reduce the number of nested if statements.
+*/
+
 const crypto = require("crypto");
 
 exports.generatePartitionKey = (event) => {
@@ -29,6 +33,3 @@ exports.generatePartitionKey = (event) => {
   return partitionKey;
 };
 
-/* 
-In this refactored version, the trivial partition key is assigned at the beginning and only overwritten if the event or the event's partition key are present. The hash calculation for the event data has been moved inside the else if statement, so it will only be executed if the event is present but doesn't contain a partition key. Additionally, the code has been rearranged to reduce the number of nested if statements.
-*/

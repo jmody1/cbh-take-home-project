@@ -1,3 +1,8 @@
+
+/*
+This code tests the different scenarios in which the deterministicPartitionKey function might be used, including the case where the event has a partition key; the case where the event does not have a partition key; and the case where the event is falsy. The tests verify that the expected values are returned and that the returned values have the correct data type and length.
+*/
+
 const { deterministicPartitionKey } = require("./dpk");
 
 describe("deterministicPartitionKey", () => {
@@ -25,7 +30,3 @@ describe("deterministicPartitionKey", () => {
     expect(deterministicPartitionKey(null)).toEqual("0");
   });
 });
-
-/*
-This code tests the different scenarios in which the deterministicPartitionKey function might be used, including the case where the event has a partition key, the case where the event does not have a partition key, and the case where the event is falsy. The tests verify that the expected values are returned and that the returned values have the correct data type and length.
-*/
